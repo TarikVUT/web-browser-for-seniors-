@@ -76,6 +76,67 @@ Accessibility features: Simplified navigation, large fonts, etc.
 
 Overview of machine learning approach
 
+### 1\. **Data Collection**
+
+First, you need a dataset containing both phishing and legitimate websites. This dataset should include features from both types of sites, such as:
+
+-   **URL features**: Length, presence of special characters, domain age, etc.
+-   **HTML features**: Content structure, presence of iframes, external links.
+-   **Network features**: IP addresses, DNS information, WHOIS data.
+-   **Visual features**: Screenshots or images of the website.
+
+### 2\. **Feature Extraction**
+
+Extract relevant features from the data collected. Commonly used features include:
+
+-   **URL-based features**: Length, token frequency, presence of HTTPS, etc.
+-   **Content-based features**: Presence of certain keywords, JavaScript usage, and forms.
+-   **Structural features**: Layout and design consistency.
+-   **Metadata**: WHOIS information, domain registration details.
+
+### 3\. **Choosing Models**
+
+You can use various machine learning models to classify phishing websites. Here are some options:
+
+#### **Traditional Machine Learning Models:**
+
+-   **Logistic Regression**: Good for a baseline model to understand the importance of features.
+-   **Decision Trees**: Helps with understanding feature importance and model interpretability.
+-   **Random Forests**: Provides robustness and handles a mix of feature types well.
+-   **Support Vector Machines (SVMs)**: Effective in high-dimensional spaces, useful if you have a lot of features.
+
+#### **Deep Learning Models:**
+
+-   **Neural Networks**: Useful if you have a large dataset. They can capture complex patterns.
+-   **Convolutional Neural Networks (CNNs)**: If you use visual features or screenshots.
+-   **Recurrent Neural Networks (RNNs)**: If you're working with sequences, like URL tokens.
+
+#### **Ensemble Methods:**
+
+-   **Gradient Boosting Machines (e.g., XGBoost, LightGBM)**: Often effective in practice, combining multiple models to improve performance.
+-   **Stacking**: Combines predictions from various models to improve accuracy.
+
+### 4\. **Training the Model**
+
+-   **Data Splitting**: Split your dataset into training, validation, and test sets.
+-   **Preprocessing**: Normalize or standardize features as needed.
+-   **Model Training**: Train your model on the training set and tune hyperparameters using the validation set.
+-   **Evaluation**: Assess performance using metrics like accuracy, precision, recall, F1-score, and ROC-AUC on the test set.
+
+### 5\. **Model Evaluation and Testing**
+
+-   **Cross-validation**: Use techniques like k-fold cross-validation to ensure the model generalizes well.
+-   **Performance Metrics**: Evaluate using metrics suited for imbalanced datasets, such as precision, recall, and F1-score.
+
+### 6\. **Deployment and Monitoring**
+
+-   **Deployment**: Integrate your model into a real-time system to analyze and classify websites.
+-   **Monitoring**: Continuously monitor the model's performance and update it with new data as phishing techniques evolve.
+
+### 7\. **Continuous Improvement**
+
+-   **Model Retraining**: Regularly retrain the model with new data to adapt to new phishing techniques.
+-   **Feature Engineering**: Continuously explore and add new features that may improve model performance.
 Data collection and preprocessing
 
 Model selection and training
